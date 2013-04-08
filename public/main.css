@@ -1,0 +1,77 @@
+body {
+  background:#f9f9f9;        
+  margin:0;
+  font-family:DINPro;
+}
+
+h1 {
+  color:#2489c5;
+  font-weight:normal;
+  padding:0;
+  margin:0;
+  text-transform:uppercase;
+}
+
+button {
+  background:#2489c5;
+  border:0;
+  padding:8px;
+  color:#fff;
+  font-size:14px;
+  text-transform:uppercase;
+}
+
+button[disabled] {
+  opacity: 0.5;
+}
+
+#controls {
+  float:right;
+  padding:5px 0px;
+}
+
+#container {
+  width:580px;
+  margin:auto;
+  background:#fff;
+  padding:30px;
+}
+
+#videochat {
+  margin:20px 0;
+  text-align:center;
+  position:relative;
+  height:400px;
+}
+
+#videochat video#remote {
+  background:#eee;
+  position:absolute;
+  top:0px;
+  left:0;
+  right:0;
+  height:435px;
+  width:580px;
+}
+
+#videochat button#call {
+  position:absolute;
+  top:200px;
+  z-index:1000;
+  padding:15px 50px;
+}
+
+video {
+}
+
+#remote {
+  width:480px;
+  height:360px;
+  margin:auto;
+}
+
+#local {
+  width:128px;
+  height:96px;
+  margin:auto;
+}

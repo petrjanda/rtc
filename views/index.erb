@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+    <script src="http://js.pusher.com/2.0/pusher.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/app.js"></script>
+
+    <script type="text/javascript">
+      Pusher.channel_auth_endpoint = '/auth';
+      Pusher.log = function(message) {
+        if (window.console && window.console.log) window.console.log(message);
+      };
+
+      WEB_SOCKET_DEBUG = true;
+
+      var videoCall = new VideoCall();
+
+      $(function() {
+        $('#call').click(function() {
+          videoCall.call();
+        })
+
+        $('#call').attr('disabled', 'disabled');
+
+        new PusherPresence(function(moreThenOne) {
+          if(moreThenOne)
+            $('#call').removeAttr('disabled');
+          else
+            $('#call').attr('disabled', 'disabled');
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id='container'>
+      <h1>Walkie-Talkie</h1>
+      
+      <div id='videochat'>
+        <button id='call'>Call</button>
+        <video id='remote' autoplay></video>
+        <video id='local' autoplay></video>
+      </div>
+
+    </div>
+  </body>
+</html>
